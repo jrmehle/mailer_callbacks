@@ -11,6 +11,7 @@ module MailerCallbacks
         if result
           res = deliverorig!(mail)
           run_callbacks(:after_deliver)
+          return mail
         end
       end
     end

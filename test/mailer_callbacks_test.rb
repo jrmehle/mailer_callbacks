@@ -29,6 +29,11 @@ class MailerCallbacksTest < ActionMailer::TestCase
       Notifier.deliver_run
     end
   end
+  
+  test "return mail object" do
+    mail = Notifier.deliver_run
+    assert_equal TMail::Mail, mail.class
+  end
 end
 
 class Notifier < ActionMailer::Base
